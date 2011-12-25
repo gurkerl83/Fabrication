@@ -68,7 +68,8 @@ package org.puremvc.as3.multicore.utilities.fabrication.components.fabricator {
 		 * Returns the child of the FlexModuleLoader as a FlexModule 
 		 */
 		public function get module():FlexModule {
-			return moduleLoader.child as FlexModule;
+			//return moduleLoader.child as FlexModule;
+			return moduleLoader.module as FlexModule;
 		}
 
 		/**
@@ -76,7 +77,8 @@ package org.puremvc.as3.multicore.utilities.fabrication.components.fabricator {
 		 */
 		public function get moduleFabricator():ApplicationFabricator {
 			if (isReady()) {
-				return (moduleLoader.child as IFabrication).fabricator;
+				//return (moduleLoader.child as IFabrication).fabricator;
+				return (moduleLoader.module as IFabrication).fabricator;
 			} else {
 				return null;
 			}

@@ -19,8 +19,8 @@ package org.puremvc.as3.multicore.utilities.fabrication.injection {
     import flash.utils.getQualifiedClassName;
 
     import org.as3commons.reflect.Field;
-    import org.as3commons.reflect.MetaData;
-    import org.as3commons.reflect.MetaDataArgument;
+    import org.as3commons.reflect.Metadata;
+    import org.as3commons.reflect.MetadataArgument;
     import org.as3commons.reflect.Type;
     import org.puremvc.as3.multicore.utilities.fabrication.patterns.facade.FabricationFacade;
 
@@ -94,10 +94,11 @@ package org.puremvc.as3.multicore.utilities.fabrication.injection {
             var fields:Array = type.fields;
             for each(var field:Field in fields) {
 
-                var fieldMetadatas:Array = field.metaData;
+                //var fieldMetadatas:Array = field.metaData;
+				var fieldMetadatas:Array = field.getMetadata(injectionMetadataTagName);
                 if (fieldMetadatas && fieldMetadatas.length) {
 
-                    for each(var metadata:MetaData in fieldMetadatas) {
+                    for each(var metadata:Metadata in fieldMetadatas) {
 
                         if (metadata.name == injectionMetadataTagName) {
 
@@ -106,7 +107,7 @@ package org.puremvc.as3.multicore.utilities.fabrication.injection {
                             injectionField.elementTypeIsInterface = field.type.isInterface;
                             injectionField.elementClass = field.type.clazz;
 
-                            var nameArgument:MetaDataArgument = metadata.getArgument( "" ) || metadata.getArgument( "name" );
+                            var nameArgument:MetadataArgument = metadata.getArgument( "" ) || metadata.getArgument( "name" );
                             if( nameArgument )
                                 injectionField.elementName = nameArgument.value;
                             injectionFields.push( injectionField );

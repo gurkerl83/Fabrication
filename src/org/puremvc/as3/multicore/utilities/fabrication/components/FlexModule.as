@@ -19,8 +19,8 @@ package org.puremvc.as3.multicore.utilities.fabrication.components {
     import flash.utils.getDefinitionByName;
 
     import mx.core.UIComponent;
-    import mx.modules.Module;
-
+	import spark.modules.Module;
+	
 	import org.puremvc.as3.multicore.utilities.fabrication.components.fabricator.ApplicationFabricator;
 	import org.puremvc.as3.multicore.utilities.fabrication.components.fabricator.FlexModuleFabricator;
 	import org.puremvc.as3.multicore.utilities.fabrication.events.FabricatorEvent;
