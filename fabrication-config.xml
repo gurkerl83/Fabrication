@@ -51,7 +51,8 @@
             <path-element>${flex.home}/frameworks/locale</path-element>
             <path-element>${flex.home}/frameworks/locale/en_US</path-element>
             <path-element>${flex.home}/frameworks/libs/air</path-element>
-            <path-element>${flex.home}/frameworks/libs/player/10.0</path-element>
+            <path-element>${flex.home}/frameworks/libs/mx</path-element>
+            <path-element>${flex.home}/frameworks/libs/player/11.1</path-element>
             <path-element>${flex.home}/frameworks/libs/automation</path-element>
         </external-library-path>
 
